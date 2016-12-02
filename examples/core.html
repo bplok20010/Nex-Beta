@@ -1,0 +1,138 @@
+<!DOCTYPE html> 
+<html style="height:100%;">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Calendar</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1">
+        <link rel="stylesheet" href="css/examples.css">
+        <link rel="stylesheet" href="../themes/default/nex.css">
+        <script src="../jquery/jquery-1.11.1.custom.min.js"></script>
+        <!--<script src="../jquery/zepto.min.js"></script>-->
+        
+        <script type="text/javascript">
+		var NexDev = true;
+		</script>
+        <script src="../loader.js"></script>
+        <!--<script src="../nex-all.js"></script>-->
+    </head>
+    <body style="height:100%;">
+    
+    <div id="boxs" style=" padding:10px; border:10px solid red; width:100px; height:100px; box-sizing : border-box;">
+    	<div style=" padding:10px; border:10px solid red; width:100%; height:100%; box-sizing : border-box;"></div>
+    </div>
+    
+    <style type="text/css">
+	.table { display:table; background:#f00;width:500px;margin-left:200px; }
+	.t_row { display:table-caption; border:1px solid #f00; height:100px; background:#00f;}
+	.t_cell { display:table-cell; border:1px solid #f00; height:100px;  background:#0f0 }
+	</style>
+    
+    <div class="table">
+      <div class="t_row">一列</div>
+      <div class="t_cell">两列</div>
+      <div class="t_cell">两列</div>
+    </div>
+    <div class="table">
+      <div class="t_row">一列</div>
+      <div class="t_cell">三列</div>
+      <div class="t_cell">三列</div>
+      <div class="t_cell">三列</div>
+    </div>
+    <div class="table">
+      <div class="t_row">一列</div>
+      <div class="t_cell">四列</div>
+      <div class="t_cell">四列</div>
+      <div class="t_cell">四列</div>
+      <div class="t_cell">四列</div>
+    </div>
+    
+    <div style="padding:10px; border:1px solid green;">
+    	<div style="position:absolute; top:0px; border:1px solid red;">a</div>
+    <input type="text" />
+    </div>
+    <div id="box" style="border:2px solid red; padding:10px; width:100px; height:100px; box-sizing:border-box; -moz-box-sizing:border-box;"></div>
+    
+    <script type="text/javascript">
+	
+		NexDev = true;
+		var t,i=1;
+		function test() {
+			console.time('a');	
+			x = Nex.Button.create({
+				//width : '300',
+				title : 'cccc',
+				text : '按钮',
+				placeholder : '请输入...',
+				//cleanBtn : true,
+				display : 'block',
+				triggerBtns : [{
+					text : 'x2',
+					callback : function(){
+						this.val( this.val()*2 );	
+					}	
+				}],
+				value : '1',
+				iconCls : 'fd',
+				labelPosition : 'left',
+				//height : '50%',
+				//items : [1,2,3,4,5,6,7,8,9],
+				items : [
+					//{ title : 'cccc', html : 'adfasdf' },
+//					{ title : 'cccc', html : 'adfasdf' },
+//					{ title : 'cccc', html : 'adfasdf' },
+//					{ title : 'cccc', html : 'adfasdf' },
+//					{ title : 'cccc', html : 'adfasdf' },
+//					{ title : 'cccc', html : 'adfasdf' },
+					{ title : 'cccc', html : 'adfasdf' }
+				],
+				labelText : 'abcdddfadfadfadfasdfasdfa'	
+			});
+		//	x.showLoading();
+			console.timeEnd('a');
+			i++;
+			if( i > 13 ) clearInterval(t);
+		}
+		require(['Nex/form/Select','Nex/form/Textarea','Nex/button/Button','Nex/form/Checkbox','Nex/form/Display', 'Nex/window/Window', 'Nex/accordion/Accordion'], function( date){
+			
+			t = setInterval(test, 500);
+		});
+		function openWindowDlg(){
+			Nex.Window.create({
+				title : '性能测试',
+				width : 700,
+				height : 500,
+				autoScroll : true,
+				items : function(){
+					return (function(){
+						var s = []
+						for( var i=0;i<20;i++ ) {
+							s.push({
+								xtype : 'textfield',
+								width : '300',
+								placeholder : '请输入...',
+								//cleanBtn : true,
+								//display : 'block',
+								triggerBtns : [{
+									text : 'x2',
+									callback : function(){
+										this.val( this.val()*2 );	
+									}	
+								}],
+								value : '1',
+								labelPosition : 'left',
+								//height : '50%',
+								items : [1,2,3,4,5,6,7,8,9],
+								labelText : 'abcdddfadfadfadfasdfasdfa'	
+							});	
+						}	
+						return s;
+					})();	
+				}	
+			});	
+		}
+	</script>
+    <button onClick="openWindowDlg();">Dialog</button>
+    </body>
+</html>

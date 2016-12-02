@@ -1,0 +1,49 @@
+<!DOCTYPE html> 
+<html style="height:100%;">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Calendar</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1">
+        <link rel="stylesheet" href="css/examples.css">
+        <link rel="stylesheet" href="../themes/default/nex.css">
+        <script src="../jquery/jquery-1.8.3.js"></script>
+        <script src="../src/core/Extend.js"></script>
+        <script type="text/javascript">
+		var NexDev = true;
+		</script>
+        <script src="../loader.js"></script>
+        <!--<script src="../nex-all.js"></script>-->
+    </head>
+    <body style="height:100%;">
+    <div id="out">fadf</div>
+    <script type="text/javascript">
+		NexDev = true;
+		function a(){
+				
+		}
+		console.time('ta');
+		new a();
+		console.timeEnd('ta');
+		require(['Nex/form/Text','Nex/panel/Panel'], function( text ){
+			require(['Nex/core/Extend'], function( text ){
+				console.time('time');
+				
+				Nex.Create('base', {
+					html : 'abc',
+					border : true,
+					width : '40%'
+				});
+				
+				console.timeEnd('time');
+				
+				console.time('_outer');
+				$(out)._outerWidth();
+				$(out)._outerHeight();
+				console.timeEnd('_outer');
+			});
+		});
+	</script>
+    </body>
+</html>

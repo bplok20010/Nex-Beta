@@ -1,0 +1,43 @@
+<!DOCTYPE html> 
+<html style="height:100%;">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1">
+        <link rel="stylesheet" href="css/examples.css">
+        <link rel="stylesheet" href="../themes/default/nex.css">
+        <script src="../src/util/Underscore.js"></script>
+       
+    </head>
+    <body style="height:100%;">
+   		<script type="text/javascript">
+		var s = {a:1,b:2,c:3};
+		x = _.reduceRight(s, function(a,b){
+			console.log(a,b);
+			return a+b
+		}, 0);
+		
+		var listOfPlays = [
+			{ title : 12, author : 'Shakespeare', year:1212 },
+			{ title : 11, author : 'Shakespeare', year:1212 },
+			{ title : 13, author : 'Shakespeare', year:1212 },
+			{ title : 5, author : 'Shakespeare', year:1611 },
+			{ title : 7, author : 'Shakespeare', year:1212 },
+			{ title : 9, author : 'Shakespeare', year:1611 }
+		]
+		
+		console.log( _.contains(listOfPlays, function(a){ console.log( a ); }) );
+		
+		var stooges = [{name: 'moe', age: 40}, {name: 'larry', age: 50}, {name: 'curly', age: 60}];
+		_.indexBy(stooges, 'age');
+		
+		console.log( _.toArray([1,2,3,4,5]) , 'toArray')
+		
+		var iarr = [1, 2, 1, 0, 3, 1, 4];
+		_.without(iarr, 0, 1);
+		
+		</script>
+    </body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html> 
+<html style="height:100%;">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Calendar</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1">
+        <link rel="stylesheet" href="css/examples.css">
+        <link rel="stylesheet" href="../themes/default/nex.css">
+        <script src="../jquery/jquery-1.8.3.js"></script>
+        <script type="text/javascript">
+		var NexDev = true;
+		</script>
+        <script src="../loader.js"></script>
+        <!--<script src="../nex-all.js"></script>-->
+    </head>
+    <body style="height:100%;">
+    <script type="text/javascript">
+		NexDev = true;
+		var trees = [
+			{text:'node3',id:3,leaf:false},
+			{text:'node4',id:4},
+			{text:'node52',id:5,order:-2},
+			{text:'node6',id:6},
+			{text:'node7',id:7,icon:'cc'},
+			{text:'node8',id:8},
+			{text:'node2',id:2,children:[{text:'node2',id:9}]},
+			{text:'node56',id:1,children : [
+				{text:'node2',id:10,children:[{text:'node2',id:13},{text:'node2',id:25,children:[{text:'node2',id:49}]},{text:'node2',id:12}]}
+			]}
+		];
+		var Tree;
+		require(['Nex/tree/Tree'], function( tree ){
+			
+			Tree = tree.create({
+				title : 'Tree',
+				data:trees,
+				showExpanderIcon : false,
+				showTreeIcon : false,
+				animate : false,
+				showTreeLines : false
+				//expandOnLoad : true
+			});
+		});
+	</script>
+    </body>
+</html>
